@@ -20,6 +20,7 @@
 
 <body>
     <!-- Navigation bar -->
+    <input type="hidden" id="loggedin" value="{{ request.args.get('username') }}">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
              <img id="titleicon" src="../static/img/dumbbell.png"> <a class="navbar-brand" href="/">ShapeGoal</a>
@@ -31,7 +32,7 @@
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="/">Home</a>
                     </li>
-                     <li class="nav-item" >
+                     <li class="nav-item" id="accountli">
                         <a class="nav-item nav-link "  id="accountlink" href="#">Account</a>
                     </li>
                     <li class="nav-item">
@@ -64,13 +65,15 @@
                     <div class="p-5">
                         <h2 class="display-4">Calorie Calculator.</h2>
                         <p>Identify the perfect amount of calories required to reach your target goal, maintain your current weight or your lose target as well as all details you might need on your journey! </p>
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" id="btncalcul" href="/calcul">Try it now!</a>
                     </div>
                 </div>
+            
             </div>
         </div>
     </section>
     
-    <section>
+    <section id="secad1">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -87,8 +90,7 @@
             </div>
         </div>
     </section>
-    
-    <section>
+    <section  id="secad2">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
@@ -105,9 +107,55 @@
             </div>
         </div>
     </section>
+    
+    <section>
+                <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <img class="img-fluid " src="static/img/watcher.jpg" alt="" style="width:300%;">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Calorie Watcher</h2>
+                        <p>Calculate the exact amount of calories you are consuming and identify the exact nutrients you should put in your body to reach your goal!</p>
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" id="btnwatch" href="/watch">Try it now!</a>
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalunreg" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+                       <h1>Join us Now and start your journey towards your dream body!</h1> 
+               <button id='btnjoin' type="button" onclick="join()">Join now!</button>
+
+
+
+    </div>
+  </div>
+</div>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalreg" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" id="premiumcontent">
+                       <h1>Begin Premium with us Today and access the full potential of your body!</h1> 
+               <button id='btnpremium' type="button" onclick="premium()">Buy Premium!</button>
+
+
+
+    </div>
+  </div>
+</div>
       <footer class="py-5 bg-black">
         <div class="container">
-            <p class="m-0 text-center text-white small">Copyright &copy; Lechheb, Abbou El Hassan 2022</p>
+            <p class="m-0 text-center text-white large">Copyright &copy; Lechheb, Abbou El Hassan 2022</p>
         </div>
         <!-- /.container -->
     </footer>
@@ -134,23 +182,25 @@
         Log-in to your account
       </div>
     </h2>
-    <form class="ui large form" action="../static/python/basefunc.py">
+    <form method="post" class="ui large form" id="form" action="http://localhost:3000/login">
          <h6 name="func" hidden>log</h6>
       <div class="ui  segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+            <input type="text" name="email" id="email" placeholder="E-mail address">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password">
           </div>
         </div>
-        <div class="ui fluid large primary submit button">Login</div>
+                      <button type="submit" class="ui fluid large primary submit button">Login</button>
            New to us? <a href="/SignUp">Sign Up</a>
+          <h6 id="error" class="alter alert-danger text-capitalize text-center rounded-3"> {{ lastname }}</h6>
+
       </div>
     </form>
 
@@ -159,15 +209,86 @@
 
 </div>
     <!-- Footer -->
+               <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="../static/js/login.js" type="text/javascript"></script>
+               <script>
+        const form = document.getElementById("form");
+        const submit = document.getElementById("submit");
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+                   const error = document.getElementById("error");
+                    let url = new URL(window.location.href);
+                   let params = new URLSearchParams(url.search);
+                   console.log(params.get('image'));
+        //for email format validation
+        function isEmail(email) {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
+        }
+                   form.addEventListener('submit', (e) => {
+                       if (!isEmail(email.value)) {
+
+                           error.innerText = "Enter proper Email";
+                           e.preventDefault();
+
+                       } else if (password.value == "") {
+                           error.innerText = "Enter password";
+                           e.preventDefault();
+                       }
+                   });
+
+
+                   if (document.getElementById("loggedin").value != "None") {
+                       class Reguser {
+                           constructor(name, image, id) {
+                               this.name = name;
+                               this.image = image;
+                               this.id = id;
+                           }
+                           logout() {
+                               fetch('http://127.0.0.1:5000/logout', {
+                                   method: 'POST',
+
+
+                               })
+                                   .then(response => response.json())
+                                   .then(response => console.log(JSON.stringify(response)))
+                           }
+                       }
+
+                       const user = new Reguser(params.get('username'), params.get('image'), params.get('id'));
+                       if (!user.image) {
+                           user.image = "default-avatar.jpg";
+                       }
+                       document.getElementById("accountli").innerHTML =
+                           " <img id='titleicon' src='../static/img/userimg/" + user.image + "'> </li>    <li class='nav - item'>  <a class='nav-item nav-link' id='logouta' href='/logout'> Logout</a></li> ";
+                       document.getElementById('logouta').addEventListener('click', (e) => {
+                           user.logout();
+                          
+                       });
+                       document.getElementById("secad1").style.display = document.getElementById("secad2").style.display = "None";
+                       document.getElementById("btncalcul").innerHTML = "Calculate";
+                       document.getElementById("btnwatch").innerHTML = "Watch Nutrients";
+                       $('#modalreg').modal('show');
+                       function premium() {
+                           document.getElementById("premiumcontent").innerHTML = "<form action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post'>   <input type='hidden' name='cmd' value='_s-xclick'> <input type='hidden' name='hosted_button_id' value='6RNT8A4HBBJRE'> <input type='image' src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png' alt='Buy Now'><img alt='' src='https://paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'></form>"
+                       }
+
+                   } else { $('#modalunreg').modal('show'); }
+                   function join() {
+                       $('#modalunreg').modal('hide');
+                       $(".test").modal('show');
+                       $(".test").modal({
+                           closable: true
+                       });
+                   }
+    </script>
+
+  </body>
    
 </html>

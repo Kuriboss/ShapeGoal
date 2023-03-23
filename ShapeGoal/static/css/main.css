@@ -11,7 +11,29 @@ body {
     font-family: 'Catamaran';
     font-weight: 800 !important;
   }
-  
+  #btncalcul{
+      background:#19d41c;
+      color:white;
+
+  }
+#btnjoin {
+    width: 100px;
+    height: 50px;
+    background: #2093b2;
+    color: white;
+    margin: auto;
+}
+#btnpremium {
+    width: 100px;
+    height: 50px;
+    background: #e61313;
+    color: white;
+    margin: auto;
+}
+#btnwatch{
+    background: #1222d4;
+    color: white;
+}
   .btn-xl {
     text-transform: uppercase;
     padding: 1.5rem 3rem;
@@ -98,7 +120,14 @@ body {
     background-color: #bd0760 !important;
     border-color: #bd0760 !important;
   }
-  
+    .btn-primary#btncalcul:active, .btn-primary#btncalcul:focus, .btn-primary#btncalcul:hover {
+        background-color: #e61313 !important;
+        border-color: #e61313 !important;
+    }
+    .btn-primary#btnwatch:active, .btn-primary#btnwatch:focus, .btn-primary#btnwatch:hover {
+        background-color: #d4dc1d !important;
+        border-color: #d4dc1d !important;
+    }
   .btn-primary:focus {
     box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
   }

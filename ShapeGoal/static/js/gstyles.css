@@ -1,0 +1,517 @@
+body {
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+ul {
+    font-size: .8em;
+    padding-left: 1em;
+}
+
+.B {
+    font-weight: bold;
+}
+
+.C {
+    text-align: center;
+}
+
+.Re {
+    color: red;
+}
+
+.Gr {
+    color: lime;
+}
+
+.Bl {
+    color: blue;
+}
+
+.Or {
+    color: orange;
+}
+
+#cont {
+    width: 100%;
+    position: relative;
+}
+
+#contC {
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    left: -100%;
+}
+
+.tipButton {
+    box-sizing: border-box;
+    box-shadow: 0 0 8px hsla(0,0%,0%,.5);
+    width: 45%;
+    display: inline-block;
+    text-decoration: none;
+    margin: 1%;
+    padding: 2%;
+    overflow: hidden;
+    color: black;
+    border: 2px solid black;
+    border-radius: 100%;
+    background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 95%), hsl(0, 0%, 33%));
+    transition: 0.7s;
+}
+
+    .tipButton:hover {
+        background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 100%), hsl(0, 0%, 50%));
+        box-shadow: 0 0 16px hsla(0,0%,0%,0.7);
+        transition: 0.2s;
+    }
+
+    .tipButton:active {
+        background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 80%), hsl(0, 0%, 20%));
+    }
+
+.imgSocs {
+    width: 40%;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.ubLink {
+    font-weight: 700;
+    text-decoration: underline;
+    transition: opacity .7s;
+    opacity: .7;
+    color: black;
+}
+
+    .ubLink:hover {
+        transition: opacity .3s;
+        opacity: 1;
+    }
+
+.uButtons {
+    text-align: center;
+    margin: 0.3em;
+    padding: 0.1em 0.75em;
+    color: black;
+    border: .1em solid black;
+    border-radius: 5em;
+    display: inline-block;
+    font: inherit;
+}
+
+.uButtonDisabled {
+    background: linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 60%));
+    opacity: 0.5;
+}
+
+.uButtonGrey {
+    background: linear-gradient(hsl(0, 0%, 90%), hsl(0, 0%, 70%));
+}
+
+    .uButtonGrey:hover {
+        background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+    }
+
+    .uButtonGrey:active {
+        background: linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 60%));
+    }
+
+.uButtonGreen {
+    background: linear-gradient(hsl(120, 100%, 75%), hsl(120, 100%, 30%));
+}
+
+    .uButtonGreen:hover {
+        background: linear-gradient(hsl(120, 100%, 85%), hsl(120, 100%, 40%));
+    }
+
+    .uButtonGreen:active {
+        background: linear-gradient(hsl(120, 100%, 60%), hsl(120, 100%, 20%));
+    }
+
+.uButtonOrange {
+    background: linear-gradient(hsl(40, 100%, 85%), hsl(40, 100%, 40%));
+}
+
+    .uButtonOrange:hover {
+        background: linear-gradient(hsl(40, 100%, 95%), hsl(40, 100%, 50%));
+    }
+
+    .uButtonOrange:active {
+        background: linear-gradient(hsl(40, 100%, 70%), hsl(40, 100%, 30%));
+    }
+
+.uButtonRed {
+    background: linear-gradient(hsl(0, 100%, 75%), hsl(0, 100%, 30%));
+}
+
+    .uButtonRed:hover {
+        background: linear-gradient(hsl(0, 100%, 85%), hsl(0, 100%, 40%));
+    }
+
+    .uButtonRed:active {
+        background: linear-gradient(hsl(0, 100%, 60%), hsl(0, 100%, 20%));
+    }
+
+.uButtonLeft {
+    border-radius: 5em 0 0 5em;
+    margin-right: 0;
+    border-right: 0;
+}
+
+.uButtonMid {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.uButtonRight {
+    border-radius: 0 5em 5em 0;
+    margin-left: 0;
+    border-left: 0;
+}
+
+.uB15 {
+    width: 15%;
+}
+
+.fsInner {
+    transform: scale(1.5, 1);
+    font-weight: bolder;
+    display: inline-block;
+    line-height: 1em;
+    margin-right: .2em;
+}
+
+.settB {
+    position: absolute;
+    top: 0;
+    padding: .2em .5em .2em .4em;
+    line-height: 125%;
+    font-size: 125%;
+    background-color: hsla(0, 0%, 100%, .5);
+    border-bottom: 2px solid hsl(210, 100%, 50%);
+    border-right: 2px solid hsl(210, 100%, 50%);
+}
+
+#settCont {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    border-right: 4px solid hsl(210, 100%, 50%);
+    transition: left 0.6s ease-out;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 24; /* Brave on android 9 doesn't z-index like others! */
+}
+
+.settInner {
+    position: absolute;
+    padding: 1.5em .8em;
+    width: inherit;
+    box-sizing: border-box;
+}
+
+
+.volCont {
+    text-align: center;
+    background: linear-gradient(90deg, hsl(240,100%,50%), hsl(180,100%,50%), hsl(120,100%,50%), hsl(60,100%,50%), hsl(0,100%,50%));
+    border: .1em solid black;
+    border-radius: 5em;
+    position: relative;
+    margin: 1em 0em;
+    display: inline-block;
+    width: 75%;
+}
+
+.volInner {
+    position: absolute;
+    border-radius: 5em;
+    border: .1em solid black;
+    top: -0.5em;
+    left: 28.4%;
+    width: 2em;
+    height: 2em;
+}
+
+.vImg {
+    margin-right: 0.2em;
+    transform: scaleX(2.5);
+    font-size: 0.8em;
+    line-height: 2.3em;
+}
+
+.nImg {
+    font-size: 1.9em;
+    line-height: 1.1em;
+}
+
+.loadC {
+    width: 90%;
+    position: relative;
+    margin: 2px auto;
+    border-radius: 24px;
+    border: 2px solid hsl(0, 0%, 50%);
+    text-align: left;
+}
+
+.loadPi {
+    position: relative;
+    border-radius: inherit;
+    height: 24px;
+    width: 0%;
+    background: linear-gradient(hsl(120, 100%, 90%), hsl(120, 100%, 40%));
+}
+
+.loadPc {
+    border-radius: inherit;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: hsl(0, 0%, 50%);
+    font-weight: bold;
+    font-size: 125%;
+    line-height: 24px;
+    top: 0px;
+}
+
+.loadVV {
+    position: relative;
+    float: none;
+    animation: Vom .5s ease-in-out alternate infinite;
+    width: 25%;
+    background: radial-gradient(farthest-side at 50% 50%, hsl(120, 100%, 50%), hsla(0, 100%, 50%, 0));
+}
+
+@keyframes Vom {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 75%;
+    }
+}
+
+#toastContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 64;
+}
+
+#toastPopup {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 1.5em;
+    width: 100%;
+    top: 0px;
+    border-top: 4px solid hsl(210, 100%, 50%);
+    animation: popupBouncer .5s ease-in-out;
+    background-color: hsla(0, 0%, 100%, .95);
+    background: hsl(0, 0%, 100%);
+}
+
+@keyframes popupBouncer {
+    0% {
+        top: 100%;
+    }
+
+    60% {
+        top: -25%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+.buttonClose {
+    z-index: 32;
+    font-weight: bold;
+    padding: .05em 0.3em;
+    font-size: 1.5em;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+#unp {
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: .2em solid black;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+
+.toolTipclass {
+    color: #092;
+    transition: color 0.4s;
+}
+
+    .toolTipclass:hover {
+        transition: color 0.8s;
+        color: #04f;
+    }
+
+.conty {
+    float: left;
+    margin: 0px;
+    padding: 3px;
+    text-align: center;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.c4 {
+    width: calc(25% - 1px);
+}
+
+.c5 {
+    width: calc(20% - 1px);
+}
+
+.inputThingy {
+    clear: both;
+    float: left;
+    margin: 0px;
+    padding: .2em;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: .3em;
+    box-sizing: border-box;
+    font-size: inherit;
+}
+
+.inputEn {
+    background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 80%))
+}
+
+.inputDi {
+    background: linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 60%))
+}
+
+.inputNo {
+    background: linear-gradient(hsl(0, 100%, 90%), hsl(0, 100%, 75%));
+}
+
+#pupB {
+    position: absolute;
+    z-index: 96;
+    background: black;
+    opacity: 0;
+}
+
+#pup {
+    position: absolute;
+    box-sizing: border-box;
+    left: -1.2em;
+    border-radius: 0.6em;
+    padding: .6em;
+    z-index: 98;
+    background: linear-gradient(hsla(0, 0%, 100%, .95), hsla(0, 0%, 88%, .95));
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+#pupc {
+    z-index: 97;
+    position: absolute;
+    border-radius: .6em;
+    box-shadow: 0px 2px 10px black;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+#pupD {
+    z-index: 99;
+    position: absolute;
+    transform: rotate(45deg);
+    padding: 1em;
+    left: -2em;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.pupDA {
+    background: linear-gradient(-45deg, hsla(0, 0%, 100%, 0) 50%, hsla(0, 0%, 100%, .95) 50%);
+}
+
+.pupDB {
+    background: linear-gradient(-45deg, hsla(0, 0%, 88%, .95) 50%, hsla(0, 0%, 100%, 0) 50%);
+}
+
+#pupDc {
+    z-index: 96;
+    position: absolute;
+    transform: rotate(45deg);
+    padding: 1em;
+    left: -2em;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.pupDcA {
+    box-shadow: -1px -1px 10px black;
+}
+
+.pupDcB {
+    box-shadow: 2px 2px 10px black;
+}
+
+.balancer {
+    border-radius: 2em;
+    background: radial-gradient(farthest-side at 50% 50%, hsl(0, 0%, 100%),hsl(0, 0%, 70%));
+    border: .1em solid hsl(0, 0%, 60%);
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .balancer:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+.balancerInner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.playOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 1;
+    left: 0;
+    top: 0;
+}
+
+#playButtons {
+    position: relative;
+    text-align: center;
+}
+
+.mid {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}

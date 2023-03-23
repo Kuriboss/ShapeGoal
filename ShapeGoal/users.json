@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "63980659d6546804a9666fb0"
+  },
+  "username": "akasha",
+  "email": "console.choice@gmail.com",
+  "password": "$2b$10$LonCkSiYVOEFMXovUDN6H.xYNRjIAfbJ4fxBNCD6MEldGQ704tmCq",
+  "dob": "2009-09-09",
+  "sex": null,
+  "phone": "333-333-2222",
+  "goal": "Cuting",
+  "image": "Face.PNG"
+},{
+  "_id": {
+    "$oid": "6398278948d819f1b6401d69"
+  },
+  "username": "xzczxczxc",
+  "email": "supreme-king@hotmail.fr",
+  "password": "$2b$10$9oyLZEsPlJ4BsOg/zMFZUuiuV1AfGk30y/ciLaEvowKyOneglXJVK",
+  "dob": "2009-09-09",
+  "sex": null,
+  "phone": "222-222-3333",
+  "goal": "Maintaining",
+  "image": ""
+},{
+  "_id": {
+    "$oid": "639828d29270c5cf0b68989d"
+  },
+  "username": "xcbbbgb",
+  "email": "admin@hotmail.xo",
+  "password": "$2b$10$iKsLLT1eoAj39V52.klh3uBBYp14PyPIhFH9Gc5Bn3gbeP6yTOm8S",
+  "dob": "2009-09-09",
+  "sex": "on",
+  "phone": "222-222-3333",
+  "goal": "Bulking",
+  "image": ""
+},{
+  "_id": {
+    "$oid": "63982bd69270c5cf0b68989e"
+  },
+  "username": "NadirLx",
+  "email": "supreme-king@hotmail.comc",
+  "password": "$2b$10$On8l8L8DbpL/DE.7XVv.G.trb176z5lxveh7eDcohwfR9y7F/YrnS",
+  "dob": "2009-09-09",
+  "sex": "on",
+  "phone": "333-333-2222",
+  "goal": "Maintaining",
+  "image": ""
+},{
+  "_id": {
+    "$oid": "6398df0401778b3bcbe8f99b"
+  },
+  "username": "Steve",
+  "email": "steve@gmail.com",
+  "password": "$2b$10$EP6r8upjlfzz/b1dmqEqxuDzHsa15aTPhAwc/0X7.TEXCp0mdl0fu",
+  "dob": "1890-08-04",
+  "sex": "on",
+  "phone": "333-333-2222",
+  "goal": "Maintaining",
+  "image": "Untitled-1.png"
+}]

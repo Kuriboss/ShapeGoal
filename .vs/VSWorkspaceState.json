@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\ShapeGoal",
+    "\\ShapeGoal\\account",
     "\\ShapeGoal\\static",
-    "\\ShapeGoal\\templates"
+    "\\ShapeGoal\\static\\js\\watcher",
+    "\\ShapeGoal\\static\\python"
   ],
-  "SelectedNode": "\\ShapeGoal\\app.py",
+  "SelectedNode": "\\ShapeGoal\\account\\app.js",
   "PreviewInSolutionExplorer": false
 }

@@ -1,21 +1,16 @@
-# ChickenChest
+# ShapeGoal
 Fitness website built using Flask in Python3 and HTML, CSS and Javascript.
 
-## Working on website
-To be able to work on the website, you need to create a virtual environment through which you work on the website.
-To install a virtual environment, open a cmd inside the directory on your PC.
-Then run the following command.
+## Run website locally
+to run this app, please run the following commands in the following order:
 ```
-python –m venv env
-```
-Then, to open up the virtual environment, use the following command.
-```
-.\env\Scripts\activate
+0-import admin.json and users.json in your 'ShapeGoal' Mongo localhost
+1- cd ShapeGoal
+2- flask --app app.py --debug run 
+3- go to http://127.0.0.1:5000/ (Flask)
+4- cd ShapeGoal/account
+5-node app (Mongo Server Side)
+6- :D
 ```
 
-## Run website locally
-To run the website, simply run the python file.
-Use the following command.
-```
-py app.py
-```
+I'll let you know when the game is finished Steve! 
